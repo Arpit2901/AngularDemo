@@ -1,0 +1,57 @@
+<style>
+  body{
+    background-color: #2f2f2f;
+  }
+
+</style>
+  <div align="center">
+    <app-nav-comp></app-nav-comp>
+    <h1 >WELCOME to {{title}}</h1>
+    <hr>
+  </div>
+
+  <h3>NG if Condition</h3>
+    <div>
+      <input type="radio" name="rb"(click)="changedata(true)">Valid
+      <input type="radio" name="rb"(click)="changedata(false)">INValid
+    </div>
+    <div *ngIf="isvalid else elseblock">The data is valid</div>
+    <div *ngIf="!isvalid">The data is INvalid</div>
+    <ng-template #elseblock>
+      <button>False button</button>
+    </ng-template>
+    <div align="center">
+    <app-first-com></app-first-com>
+    <app-second-com></app-second-com>
+
+  </div>
+  <div id="ull">
+
+    <ul >
+      <li *ngFor="let index of [0,1,2,3,4,5]">
+        {{ index }}
+      </li>
+    </ul>
+    <table align="center">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Branch</th>
+          <th>Gender</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let stu of student">
+        <td>{{stu.ID}}</td>
+        <td>{{stu.Name}}</td>
+        <td>{{stu.Branch}}</td>
+        <td>{{stu.Gender}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  
+  
+  
+  
